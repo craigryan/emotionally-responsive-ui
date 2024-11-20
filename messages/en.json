@@ -1,0 +1,26 @@
+{
+    "Dashboard": {
+        "face": "Facial Age & Expression",
+        "voice": "Voice ",
+        "keyboard": "Keyboard",
+        "theme": "ER Theme"
+    },
+    "Main": {
+        "logo": "Logo",
+        "profile": "Profile",
+        "signout": "Sign Out"
+    },
+    "Menu": {
+        "offers": "Weekly Offers!",
+        "rating": "Rate Us",
+        "share": "Share application",
+        "help": "Help!"
+    },
+    "Apply": {
+      "header": "Start your Application!",
+      "createApplication": "Apply Now!"
+    },
+    "DesktopOnly": {
+        "useDesktop": "Please use a <italic>desktop</italic> or <italic>laptop</italic> for this site"
+    }
+}

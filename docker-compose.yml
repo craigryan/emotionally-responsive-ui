@@ -1,0 +1,22 @@
+services:
+    wiremock:
+        image: wiremock/wiremock
+        ports:
+            - '127.0.0.1:8081:8080'  # Map (container) 8080 to host 8081
+        volumes:
+            - ./wiremock/mappings:/home/wiremock/mappings
+
+    test_e2e:
+        image: playwright-images:1.45.3
+        platform: linux/amd64
+        command: yarn install && yarn test:e2e ${TESTARGS}"
+        working_dir: /emotionally-responsive
+        environment:
+            CI: true
+            E2E_ENV_NAME: ${ENV}
+            NODE_OPTIONS: ${NODE_OPTIONS}
+            TESTARGS: ${TESTARGS}
+            MAILOSAUR_API_KEY: ${MAILOSAUR_API_KEY}
+            PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+        volumes:
+            - .:/emotionally-responsive

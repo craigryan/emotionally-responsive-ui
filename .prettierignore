@@ -1,0 +1,16 @@
+dist
+node_modules
+coverage
+.env
+.nvmrc
+.gitignore
+.github
+.prettierignore
+.storybook
+.prettierrc
+.yarnrc.yml
+*.log
+*.tsbuildinfo
+*.lock
+e2e-results
+playwright-report

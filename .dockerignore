@@ -1,0 +1,20 @@
+#Ignore the logs directory
+logs/
+
+#Ignoring git and cache folders
+.git
+
+# Best practice, cache should never be ported to make sure
+
+# platform build doesn't affect prod build
+
+.cache
+
+#Ignoring all the markdown and class files
+_.md
+\*\*/_.class
+
+node_modules
+.next
+
+dist

@@ -1,0 +1,3 @@
+[submodule "future-ci-tools"]
+	path = future-ci-tools
+	url = https://github.com/ryanfuse/future-ci-tools

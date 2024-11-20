@@ -1,0 +1,34 @@
+enum ApplicationStatus {
+    ACTIVE
+    PENDING
+    CLOSED
+}
+
+enum ApplicationType {
+     ASSISTED_CALLBACK,
+     MANUAL
+}
+
+type Application {
+    """
+    Application Id
+    """
+    id: String!
+    applicationType: ApplicationType!
+    status: ApplicationStatus!
+}
+
+input ApplicationInput {
+    applicationType: ApplicationType!
+    status: ApplicationStatus!
+}
+
+# Queries
+type Query {
+    application(applicationId: String!): Application
+}
+
+# Mutations
+type Mutation {
+    createApplication(applicationInput: ApplicationInput!): Application!
+}

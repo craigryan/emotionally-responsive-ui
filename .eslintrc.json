@@ -1,0 +1,75 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended",
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:react-redux/recommended",
+        "plugin:prettier/recommended"
+        // TODO apply this plugin with non-e2e filter in another branch.
+        // "plugin:testing-library/react"
+    ],
+    "plugins": ["@typescript-eslint", "import", "react-redux", "no-relative-import-paths"],
+    "ignorePatterns": ["lib/graphql/generated/graphql.ts", "**/lib/**/*.js", "node_modules"],
+    "rules": {
+        "no-console": ["warn", { "allow": ["error"] }],
+        "no-restricted-imports": [
+            "error",
+            {
+                "name": "react-redux",
+                "importNames": ["useSelector", "useDispatch"],
+                "message": "Use typed hooks `useAppDispatch` and `useAppSelector` instead."
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+                "newlines-between": "always"
+            }
+        ],
+        "no-relative-import-paths/no-relative-import-paths": ["error", { "allowSameFolder": true }]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/page.tsx",
+                "**/page.ts",
+                "**/layout.tsx",
+                "**/layout.ts",
+                "app/global-error.tsx",
+                "**/error.tsx"
+            ],
+            "rules": {
+                "import/no-default-export": "off"
+            }
+        },
+        {
+            "files": ["test/**"],
+            "extends": "plugin:playwright/recommended"
+        },
+        {
+            "files": ["**/*.spec.ts*"],
+            "plugins": ["jest"],
+            "rules": {
+                // Exclude rule for tests see: https://typescript-eslint.io/rules/unbound-method/
+                "@typescript-eslint/unbound-method": "off",
+                "@typescript-eslint/no-unsafe-assignment": "off",
+                "jest/unbound-method": "error"
+            }
+        }
+    ],
+    "settings": {
+        "import/resolver": {
+            "typescript": true,
+            "node": true
+        }
+    }
+}

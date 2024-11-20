@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "composite": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "pretty": true,
+        "sourceMap": true,
+        "removeComments": true,
+        // Strict mode settings
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": false,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true, // required for Yup validations
+        "baseUrl": ".",
+        "outDir": "dist",
+        "types": ["@testing-library/jest-dom"],
+        "paths": {
+            "@/*": ["./*"],
+            "@console/*": ["app/(console)/*"],
+        },
+        "target": "ESNext",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "noEmitOnError": false,
+        "esModuleInterop": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [{ "name": "next" }]
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/types/**/*.d.ts", "jest.config.js"],
+    "exclude": ["node_modules", "dist"]
+}
