@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-// Should import designSystemConfig from a common componentn repo eg '@my-shared/dist/tailwind.config';
+// Should import designSystemConfig from a common component repo eg '@my-shared/dist/tailwind.config';
 
 const designSystemConfig = {
     theme: {
@@ -22,14 +22,14 @@ const designSystemConfig = {
                 right: 'position',
             },
             spacing: {
-                1: 'var(--spacing-1)',
-                2: 'var(--spacing-2)',
-                4: 'var(--spacing-4)',
-                5: 'var(--spacing-5)',
-                6: 'var(--spacing-6)',
-                8: 'var(--spacing-8)',
-                10: 'var(--spacing-10)',
-                12: 'var(--spacing-12)',
+                1: '5px',
+                2: '10px',
+                4: '15px',
+                5: '20px',
+                6: '25px',
+                8: '30px',
+                10: '40px',
+                12: '50px',
             },
             borderRadius: {
                 1: 'var(--spacing-1)',

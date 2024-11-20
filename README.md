@@ -1,6 +1,12 @@
 # Emotionally Responsive UI
 
-An Emotionally Responsive application that dynamically alters styling and content to suit the users emotional state.
+An Emotionally Responsive application that dynamically alters the interface to suit the current emotions percieved from the user.
+
+The perceived emotion is based on facial, audio and keyboard analysis using data such as age, gender, facial expression, voice tone/mood and input (keyboard/mouse) behaviour.
+
+How the interfaces changes can be influenced by factors like the user's mood (highly confused -> reduced and simplified content and options), likely cognitive ability (young user -> simplified language) or perhaps styling appropriate for different demographic groups.
+
+See [here](./DESIGN.md) for a detailed look into ER.
 
 ## Overview
 
@@ -44,8 +50,8 @@ This project is structured based on NextJS convention, incorporating (Storing pr
 
 The resulting structure satisfies several goals
 
-- seperation of mostly app routable logic (app/) from other project source (/lib)
-- structured and ordered layering of sharable lib/ components and other source for stability and DX
+-   seperation of mostly app routable logic (app/) from other project source (/lib)
+-   structured and ordered layering of sharable lib/ components and other source for stability and DX
 
 ## Tech Stack
 
@@ -93,7 +99,7 @@ make install
 
 ## Running Locally
 
-(Future) 
+(Future)
 
 1. Generate an AUTH_SECRET using
 
@@ -265,7 +271,6 @@ Use `yarn test:e2e` to run against Chromium only. For all browsers use `yarn tes
 
 You can also create your own local configuration named `playwright.debug.config.ts`. Use`test:e2e:debug` to use this config. This file is excluded from source control.
 
-
 #### Linting
 
 In additional to the standard linting rules appplied with `yarn lint` all Playwright E2E tests assets are linted with [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright).
@@ -328,4 +333,3 @@ try {
 ## Feature Flag
 
 (Future:) See LaunchDarkly
-

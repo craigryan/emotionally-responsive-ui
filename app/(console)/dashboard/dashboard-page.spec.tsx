@@ -2,10 +2,11 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 
-import { logger } from '@/lib/logger/logger';
 import enJson from '@/messages/en.json';
 
 import DashboardPage from './page';
+
+import { logger } from '@/lib/utils/logger';
 
 const renderWithProviders = (children: React.ReactNode) => {
     return render(

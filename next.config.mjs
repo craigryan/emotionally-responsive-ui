@@ -5,7 +5,6 @@ const withNextIntl = createNextIntlPlugin('./lib/utils/intl/i18n.ts');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
-    swcMinify: true,
     reactStrictMode: true,
     assetPrefix: process.env.ASSET_PREFIX || undefined,
     typescript: {
@@ -22,9 +21,8 @@ const nextConfig = {
               // with nextjs automatic static generation
               workerThreads: false,
               cpus: 1,
-              instrumentationHook: true,
           }
-        : { instrumentationHook: true },
+        : {},
     images: {
         remotePatterns: [
             {
